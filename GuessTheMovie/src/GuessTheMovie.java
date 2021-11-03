@@ -4,7 +4,7 @@
 //---------------------
 //A random movie out of a list of movies will be displayed encrypted using
 //" _ ". You have to guess the movie letter by letter. As soon as you guess all the
-//letters you win. If you fail to do so you lose. You get 5 wrong choices
+//letters you win. If you fail to do so you lose. You get 5 wrong choices.
 
 
 
