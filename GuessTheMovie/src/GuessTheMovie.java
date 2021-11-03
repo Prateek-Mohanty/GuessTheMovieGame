@@ -1,5 +1,16 @@
+//Java OOP project.
+//-------------------
+//Guess The Movie game.
+//---------------------
+//A random movie out of a list of movies will be displayed encrypted using
+//" _ ". You have to guess the movie letter by letter. As soon as you guess all the
+//letters you win. If you fail to do so you lose. You get 5 wrong choices
+
+
+
 import java.io.File;
 import java.util.Scanner;
+import java.lang.Character;
 
 //   class to handle the movies   //
 
@@ -46,6 +57,9 @@ class Movies{
     }
     public boolean checkCharacter(char ch){
         boolean val = false;
+        if(Character.isUpperCase(ch)){
+            ch = Character.toLowerCase(ch);
+        }
         StringBuilder string = new StringBuilder(encryptedMovie);
         for(int i=0 ; i<randomMovie.length() ; i++){
             if(randomMovie.charAt(i) == ch){
