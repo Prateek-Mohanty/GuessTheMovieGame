@@ -4,11 +4,12 @@
 //---------------------
 //A random movie out of a list of movies will be displayed encrypted using
 //" _ ". You have to guess the movie letter by letter. As soon as you guess all the
-//letters you win. If you fail to do so you lose. You get 5 wrong choices.
+//letters you win. If you fail to do so you lose. You get 5 wrong choices
 
 
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.lang.Character;
 
@@ -16,7 +17,7 @@ import java.lang.Character;
 
 class Movies{
     private int noOfMovies = 0;
-    private final String [] movies = new String [26];
+    private final ArrayList<String> list = new ArrayList<>();
     private String randomMovie = "";
     private String encryptedMovie = "";
     boolean str = false;
@@ -31,13 +32,12 @@ class Movies{
         Scanner sc = new Scanner(file);
         while(sc.hasNextLine()){
             String line = sc.nextLine();
-            movies[noOfMovies] = line;
+            list.add(line);
             noOfMovies++;
         }
     }
     public void selectRandomMovie() {
-        int ctr = (int)(Math.random()*noOfMovies)+1;
-        randomMovie += movies[ctr];
+        randomMovie = list.get((int)(Math.random()*noOfMovies)+1);
     }
     public String getRandomMovie() {
         return randomMovie;
