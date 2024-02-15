@@ -35,6 +35,7 @@ class Movies{
             list.add(line);
             noOfMovies++;
         }
+        sc.close();
     }
     public void selectRandomMovie() {
         randomMovie = list.get((int)(Math.random()*noOfMovies)+1);
